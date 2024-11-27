@@ -1,12 +1,21 @@
 import { Component } from '@angular/core';
+import { TextComponent } from "../entradas/text/text.component";
+import { EmailComponent } from "../entradas/email/email.component";
+import { PasswordComponent } from "../entradas/password/password.component";
 
 @Component({
   selector: 'app-visualizador',
   standalone: true,
-  imports: [],
   templateUrl: './visualizador.component.html',
-  styleUrl: './visualizador.component.css'
+  styleUrls: ['./visualizador.component.css'],
+  imports: [TextComponent, EmailComponent, PasswordComponent]
 })
 export class VisualizadorComponent {
+  password: string = '';
+  email: string = '';
+  text: string = '';
+  animationClass: string = '';
+
+
 
 }

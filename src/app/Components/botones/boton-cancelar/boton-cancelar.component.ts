@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-boton-cancelar',
   standalone: true,
-  imports: [],
   templateUrl: './boton-cancelar.component.html',
-  styleUrl: './boton-cancelar.component.css'
+  styleUrls: ['./boton-cancelar.component.css']
 })
 export class BotonCancelarComponent {
+  @Output() clicked = new EventEmitter<void>();
 
+  onClick() {
+    this.clicked.emit();
+  }
 }

@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-boton-secundario',
   standalone: true,
-  imports: [],
   templateUrl: './boton-secundario.component.html',
-  styleUrl: './boton-secundario.component.css'
+  styleUrls: ['./boton-secundario.component.css']
 })
 export class BotonSecundarioComponent {
+  @Output() clicked = new EventEmitter<void>();
 
+  onClick() {
+    this.clicked.emit();
+  }
 }

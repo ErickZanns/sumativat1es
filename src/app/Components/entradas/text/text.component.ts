@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-text',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './text.component.html',
-  styleUrl: './text.component.css'
+  styleUrls: ['./text.component.css']
 })
 export class TextComponent {
+  text: string = '';
 
+  @Output() textChange = new EventEmitter<string>();
+
+  onTextChange(text: string) {
+    this.text = text;
+    this.textChange.emit(this.text); // Emitir el cambio
+  }
 }

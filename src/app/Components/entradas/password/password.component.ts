@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-password',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './password.component.html',
-  styleUrl: './password.component.css'
+  styleUrls: ['./password.component.css']
 })
 export class PasswordComponent {
+  password: string = '';
+  
+  @Output() passwordChange = new EventEmitter<string>();
 
+  onPasswordChange(password: string) {
+    this.password = password;
+    this.passwordChange.emit(this.password); // Emitir el cambio
+  }
 }

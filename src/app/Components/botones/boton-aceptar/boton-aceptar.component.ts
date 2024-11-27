@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-boton-aceptar',
   standalone: true,
-  imports: [],
   templateUrl: './boton-aceptar.component.html',
-  styleUrl: './boton-aceptar.component.css'
+  styleUrls: ['./boton-aceptar.component.css']
 })
 export class BotonAceptarComponent {
+  @Output() clicked = new EventEmitter<void>();
 
+  onClick() {
+    this.clicked.emit();
+  }
 }

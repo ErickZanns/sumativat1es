@@ -1,0 +1,10 @@
+.cuadrado {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    transition: transform 0.3s;
+  }
+  
+  .animate {
+    transform: scale(1.1); /* Cambia el tamaño del cuadrado para la animación */
+  }
