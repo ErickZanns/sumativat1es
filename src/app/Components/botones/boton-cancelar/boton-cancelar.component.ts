@@ -1,15 +1,16 @@
+// src/app/Components/Botones/btn-aceptar/btn-aceptar.component.ts
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-boton-cancelar',
+  selector: 'app-btn-aceptar',
   standalone: true,
-  templateUrl: './boton-cancelar.component.html',
-  styleUrls: ['./boton-cancelar.component.css']
+  templateUrl: './btn-aceptar.component.html',
+  styleUrl: './btn-aceptar.component.css'
 })
-export class BotonCancelarComponent {
-  @Output() clicked = new EventEmitter<void>();
+export class BtnAceptarComponent {
+  @Output() click = new EventEmitter<void>(); // Emite un evento al hacer clic
 
   onClick() {
-    this.clicked.emit();
+    this.click.emit(); // Emitir el evento al hacer clic
   }
 }

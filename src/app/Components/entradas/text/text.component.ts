@@ -1,20 +1,18 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-text',
   standalone: true,
-  imports: [FormsModule],
   templateUrl: './text.component.html',
   styleUrls: ['./text.component.css']
 })
 export class TextComponent {
-  text: string = '';
+  @Output() textChange = new EventEmitter<string>(); // Evento para emitir cambios en el texto
+  text: string = '';                             // Almacena el valor del texto ingresado
 
-  @Output() textChange = new EventEmitter<string>();
-
-  onTextChange(text: string) {
-    this.text = text;
-    this.textChange.emit(this.text); // Emitir el cambio
+  // Método que se llama al ingresar texto en el campo
+  onTextInput(event: Event): void {
+    this.text = (event.target as HTMLInputElement).value; // Obtiene el valor del input
+    this.textChange.emit(this.text); // Emite el nuevo valor del texto
   }
 }

@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-modo-oscuro',
+  selector: 'app-btn-night',
   standalone: true,
-  templateUrl: './modo-oscuro.component.html',
-  styleUrls: ['./modo-oscuro.component.css']
+  imports: [],
+  templateUrl: './btn-night.component.html',
+  styleUrl: './btn-night.component.css'
 })
-export class ModoOscuroComponent {
-  isDarkMode: boolean = false;
+export class BtnNightComponent {
+  @Output() toggleDarkMode  = new EventEmitter<void>(); // Emite un evento al hacer clic
+  isDarkMode: boolean = false; // Variable que indica si el modo oscuro está activado
 
-  toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-    document.body.classList.toggle('dark-mode', this.isDarkMode);
+  onClick(): void {
+    this.isDarkMode = !this.isDarkMode; // Cambia el estado de isDarkMode a su valor opuesto
+    this.toggleDarkMode .emit(); // Emitir el evento al hacer clic
   }
 }

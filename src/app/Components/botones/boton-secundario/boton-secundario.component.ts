@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-boton-secundario',
+  selector: 'app-btn-secundario',
   standalone: true,
-  templateUrl: './boton-secundario.component.html',
-  styleUrls: ['./boton-secundario.component.css']
+  templateUrl: './btn-secundario.component.html',
+  styleUrls: ['./btn-secundario.component.css']
 })
-export class BotonSecundarioComponent {
-  @Output() clicked = new EventEmitter<void>();
+export class BtnSecundarioComponent {
+  @Output() sizeChange = new EventEmitter<void>(); // Emite un evento al hacer clic
 
   onClick() {
-    this.clicked.emit();
+    this.sizeChange.emit(); // Emitir el evento al hacer clic
   }
 }

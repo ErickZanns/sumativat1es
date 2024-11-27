@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-boton-primario',
+  selector: 'app-btn-primario',
   standalone: true,
-  templateUrl: './boton-primario.component.html',
-  styleUrls: ['./boton-primario.component.css']
+  templateUrl: './btn-primario.component.html',
+  styleUrls: ['./btn-primario.component.css']
 })
-export class BotonPrimarioComponent {
-  @Output() clicked = new EventEmitter<void>();
+export class BtnPrimarioComponent {
+  @Output() click = new EventEmitter<void>(); // Emite un evento al hacer clic
 
   onClick() {
-    this.clicked.emit();
+    this.click.emit(); // Emitir el evento al hacer clic
   }
 }
